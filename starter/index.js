@@ -86,3 +86,19 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// function - The total number of months included in the dataset.
+
+// function - The net total amount of Profit/Losses over the entire period.
+
+// function - The average of the changes in Profit/Losses over the entire period.
+
+// function - You will need to track what the total change in profits are from month to month and then find the average. (Total/Number of months)
+
+// function - The greatest increase in profits (date and amount) over the entire period.
+
+// function - The greatest decrease in losses (date and amount) over the entire period.
+
+// function - format results as US $.
+
+// output results to console as per instructions
