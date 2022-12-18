@@ -135,6 +135,33 @@ function averageChange(array) {
 
 // function - The greatest increase in profits (date and amount) over the entire period.
 
+function greatestIncreaseInProfits(array) {
+
+    let MaxIncrease = -Infinity;
+    let increaseInProfits = 0;
+    let increaseInProfitsMonth = "";
+
+    for (let i = 1; i < array.length; i++) {
+        const currentElement = array[i];
+        const currentMonth = currentElement[0];
+        const currentValue = currentElement[1];
+
+        const previousElement = array[i - 1];
+        const previousMonth = previousElement[0];
+        const previousValue = previousElement[1];
+
+        const difference = currentValue - previousValue;
+
+        if (difference > MaxIncrease) {
+            MaxIncrease = difference;
+            increaseInProfits = Math.abs(previousValue - currentValue);
+            increaseInProfitsMonth = currentMonth;
+        }
+    }
+
+    return [increaseInProfitsMonth, increaseInProfits];
+}
+
 // function - The greatest decrease in losses (date and amount) over the entire period.
 
 // function - format results as US $.
@@ -146,3 +173,5 @@ console.log("Total Months: " + totalMonths(finances));
 console.log("Total: " + totalAmount(finances));
 
 console.log("Average Change: " + averageChange(finances) / (totalMonths(finances) - 1));
+
+console.log("Greatest Increase in Profits: " + greatestIncreaseInProfits(finances)[0] + " " + greatestIncreaseInProfits(finances)[1])
