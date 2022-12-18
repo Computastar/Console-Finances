@@ -137,7 +137,7 @@ function averageChange(array) {
 
 function greatestIncreaseInProfits(array) {
 
-    let MaxIncrease = -Infinity;
+    let maxIncrease = -Infinity;
     let increaseInProfits = 0;
     let increaseInProfitsMonth = "";
 
@@ -152,8 +152,8 @@ function greatestIncreaseInProfits(array) {
 
         const difference = currentValue - previousValue;
 
-        if (difference > MaxIncrease) {
-            MaxIncrease = difference;
+        if (difference > maxIncrease) {
+            maxIncrease = difference;
             increaseInProfits = Math.abs(previousValue - currentValue);
             increaseInProfitsMonth = currentMonth;
         }
@@ -163,6 +163,33 @@ function greatestIncreaseInProfits(array) {
 }
 
 // function - The greatest decrease in losses (date and amount) over the entire period.
+
+function greatestDecreaseInProfits(array) {
+
+    let maxDecrease = +Infinity;
+    let decreaseInProfits = 0;
+    let decreaseInProfitsMonth = "";
+
+    for (let i = 1; i < array.length; i++) {
+        const currentElement = array[i];
+        const currentMonth = currentElement[0];
+        const currentValue = currentElement[1];
+
+        const previousElement = array[i - 1];
+        const previousMonth = previousElement[0];
+        const previousValue = previousElement[1];
+
+        const difference = currentValue - previousValue;
+
+        if (difference < maxDecrease) {
+            maxDecrease = difference;
+            decreaseInProfits = Math.abs(previousValue - currentValue);
+            decreaseInProfitsMonth = currentMonth;
+        }
+    }
+
+    return [decreaseInProfitsMonth, decreaseInProfits];
+}
 
 // function - format results as US $.
 
@@ -175,3 +202,5 @@ console.log("Total: " + totalAmount(finances));
 console.log("Average Change: " + averageChange(finances) / (totalMonths(finances) - 1));
 
 console.log("Greatest Increase in Profits: " + greatestIncreaseInProfits(finances)[0] + " " + greatestIncreaseInProfits(finances)[1])
+
+console.log("Greatest Decrease in Profits: " + greatestDecreaseInProfits(finances)[0] + " " + greatestDecreaseInProfits(finances)[1])
