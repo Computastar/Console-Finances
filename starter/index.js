@@ -89,6 +89,10 @@ var finances = [
 
 // function - The total number of months included in the dataset.
 
+function totalMonths(array) {
+    return array.length;
+}
+
 // function - The net total amount of Profit/Losses over the entire period.
 
 // function - The average of the changes in Profit/Losses over the entire period.
@@ -102,3 +106,5 @@ var finances = [
 // function - format results as US $.
 
 // output results to console as per instructions
+
+console.log("Total Months: " + totalMonths(finances));
