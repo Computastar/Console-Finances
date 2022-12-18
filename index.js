@@ -95,7 +95,7 @@ function totalMonths(array) {
 
 // function - The net total amount of Profit/Losses over the entire period.
 
-function totalAmount(aray) {
+function totalAmount(array) {
 
     let total = array[0][1];
 
