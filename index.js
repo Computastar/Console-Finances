@@ -204,12 +204,10 @@ function formatAsDollars(number) {
 
 // output results to console as per instructions
 
+console.log("Financial Analysis")
+console.log("----------------------------")
 console.log("Total Months: " + totalMonths(finances));
-
 console.log("Total: " + formatAsDollars(totalAmount(finances)));
-
 console.log("Average Change: " + formatAsDollars(averageChange(finances) / (totalMonths(finances) - 1)));
-
-console.log("Greatest Increase in Profits: " + greatestIncreaseInProfits(finances)[0] + " " + formatAsDollars(greatestIncreaseInProfits(finances)[1]));
-
-console.log("Greatest Decrease in Profits: " + greatestDecreaseInProfits(finances)[0] + " " + formatAsDollars(greatestDecreaseInProfits(finances)[1]));
+console.log("Greatest Increase in Profits: " + greatestIncreaseInProfits(finances)[0] + " (" + formatAsDollars(greatestIncreaseInProfits(finances)[1]) + ")");
+console.log("Greatest Decrease in Profits: " + greatestDecreaseInProfits(finances)[0] + " (" + formatAsDollars(greatestDecreaseInProfits(finances)[1]) + ")");
