@@ -107,12 +107,31 @@ function totalAmount(array) {
         total += currentValue;
     }
 
-    return total
+    return total;
 }
 
 // function - The average of the changes in Profit/Losses over the entire period.
-
 // function - You will need to track what the total change in profits are from month to month and then find the average. (Total/Number of months)
+
+function averageChange(array) {
+    let runningTotal = 1;
+
+    for (let i = 1; i < array.length; i++) {
+        const currentElement = array[i];
+        const currentMonth = currentElement[0];
+        const currentValue = currentElement[1];
+
+        const previousElement = array[i - 1];
+        const previousMonth = previousElement[0];
+        const previousValue = previousElement[1];
+
+        const difference = currentValue - previousValue;
+
+        runningTotal += difference;
+    }
+
+    return runningTotal;
+}
 
 // function - The greatest increase in profits (date and amount) over the entire period.
 
@@ -125,3 +144,5 @@ function totalAmount(array) {
 console.log("Total Months: " + totalMonths(finances));
 
 console.log("Total: " + totalAmount(finances));
+
+console.log("Average Change: " + averageChange(finances) / (totalMonths(finances) - 1));
