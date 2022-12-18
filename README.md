@@ -54,7 +54,7 @@ You are required to submit BOTH of the following for review:
 ---
 
 **Website Screenshot**
-![Console Finances](/images/Bootstrap_Portfolio.jpeg "Console Finances website")
+![Console Finances](/images/Website_ScreenShot.jpeg "Console Finances website")
 
 ## License
 
